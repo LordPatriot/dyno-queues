@@ -151,15 +151,13 @@ public class Message {
 		if (id == null) {
 			if (other.id != null)
 				return false;
-		} else if (!id.equals(other.id))
-			return false;
+		} else
+			return id.equals(other.id);
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Message [id=" + id + ", payload=" + payload + ", timeout=" + timeout + ", priority=" + priority + "]";
+		return String.format("Message [id=%s, payload=%s, timeout=%d, priority=%d]", id, payload, timeout, priority);
 	}
-	
-	
 }
